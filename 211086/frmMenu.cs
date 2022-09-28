@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace _211086
 {
-    public partial class Form1 : Form
+    public partial class frmMenu : Form
     {
-        public Form1()
+        public frmMenu()
         {
             InitializeComponent();
+        }
+
+        private void frmMenu_Load(object sender, EventArgs e)
+        {
+            Banco.CriarBanco();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
