@@ -35,7 +35,7 @@
             this.btnFechar = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.btnAlternar = new System.Windows.Forms.Button();
+            this.btnAlterar = new System.Windows.Forms.Button();
             this.btnIncluir = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.txtUF = new System.Windows.Forms.TextBox();
@@ -109,16 +109,18 @@
             this.btnCancelar.TabIndex = 24;
             this.btnCancelar.Text = "✖Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // btnAlternar
+            // btnAlterar
             // 
-            this.btnAlternar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAlternar.Location = new System.Drawing.Point(174, 161);
-            this.btnAlternar.Name = "btnAlternar";
-            this.btnAlternar.Size = new System.Drawing.Size(148, 48);
-            this.btnAlternar.TabIndex = 23;
-            this.btnAlternar.Text = "🔁Alterar";
-            this.btnAlternar.UseVisualStyleBackColor = true;
+            this.btnAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAlterar.Location = new System.Drawing.Point(174, 161);
+            this.btnAlterar.Name = "btnAlterar";
+            this.btnAlterar.Size = new System.Drawing.Size(148, 48);
+            this.btnAlterar.TabIndex = 23;
+            this.btnAlterar.Text = "🔁Alterar";
+            this.btnAlterar.UseVisualStyleBackColor = true;
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
             // btnIncluir
             // 
@@ -129,6 +131,7 @@
             this.btnIncluir.TabIndex = 22;
             this.btnIncluir.Text = "➕Incluir ";
             this.btnIncluir.UseVisualStyleBackColor = true;
+            this.btnIncluir.Click += new System.EventHandler(this.btnIncluir_Click);
             // 
             // label3
             // 
@@ -191,7 +194,7 @@
             this.Controls.Add(this.btnFechar);
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.btnAlternar);
+            this.Controls.Add(this.btnAlterar);
             this.Controls.Add(this.btnIncluir);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtUF);
@@ -202,6 +205,8 @@
             this.Name = "FrmCidade";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Cidades";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FrmCidade_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCidades)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -217,7 +222,7 @@
         private System.Windows.Forms.Button btnFechar;
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.Button btnAlternar;
+        private System.Windows.Forms.Button btnAlterar;
         private System.Windows.Forms.Button btnIncluir;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtUF;
