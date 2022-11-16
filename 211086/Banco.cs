@@ -66,16 +66,34 @@ namespace _211086
                 AbrirConexao();
 
                 //Informa a instruçao SQL
-                Comando = new MySqlCommand("CREATE DATABASE IF NOT EXISTS vendas; USE venda", Conexao);
+                Comando = new MySqlCommand("CREATE DATABASE IF NOT EXISTS db_vendas; USE db_vendas", Conexao);
 
                 //Executa o Query no MySQL (Raio do workbench)
                 Comando.ExecuteNonQuery();
 
                 Comando = new MySqlCommand("CREATE TABLE IF NOT EXISTS Cidades " +
-                                            "(id integer auto_increment primary key, " +
-                                            "nome char(40)," +
-                                            "uf char(02)", Conexao);
+                                            " id INT AUTO_INCREMENT, " +
+                                            " nome VARCHAR(120)," +
+                                            " uf CHAR(02)," +
+                                            "PRIMARY KEY (id));", Conexao);
 
+                Comando.ExecuteNonQuery();
+
+                Comando = new MySqlCommand("CREATE TABLE IF NOT EXISTS Clientes " +
+                                            " id INT AUTO_INCREMENT, " +
+                                            " nome VARCHAR(120)," +
+                                            "PRIMARY KEY (id));", Conexao);
+
+
+                Comando.ExecuteNonQuery();
+
+                Comando = new MySqlCommand("CREATE TABLE IF NOT EXISTS Marca " +
+                                            " id INT AUTO_INCREMENT, " +
+                                            " descricao VARCHAR(120)," +
+                                            "PRIMARY KEY (id));", Conexao);
+
+
+                Comando.ExecuteNonQuery();
                 //Chama a funçao para fechar a conexao com o banco
                 FecharConexao();
             }

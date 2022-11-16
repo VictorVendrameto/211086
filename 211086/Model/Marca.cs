@@ -10,20 +10,18 @@ using System.Windows.Forms;
 
 namespace _211086.Model
 {
-    internal class Cidade
+    internal class Marca
     {
         public int id { get; set; }
         public string nome { get; set; }
-        public string uf { get; set; }
 
         private void Incluir()
         {
             try
             {
                 Banco.AbrirConexao();
-                Banco.Comando = new MySqlCommand("INSERT INTO Cidades (nome, uf) VALUES (@nome, @uf)", Banco.Conexao);
+                Banco.Comando = new MySqlCommand("INSERT INTO Marca (nome, uf) VALUES (@nome, @uf)", Banco.Conexao);
                 Banco.Comando.Parameters.AddWithValue("@nome", nome);
-                Banco.Comando.Parameters.AddWithValue("@uf", uf);
 
                 Banco.Comando.ExecuteNonQuery();
                 Banco.FecharConexao();
@@ -38,9 +36,8 @@ namespace _211086.Model
             try
             {
                 Banco.AbrirConexao();
-                Banco.Comando = new MySqlCommand("Update Cidades set nome = @nome, uf = @uf where id = @id", Banco.Conexao);
+                Banco.Comando = new MySqlCommand("Update Marca set nome = @nome, uf = @uf where id = @id", Banco.Conexao);
                 Banco.Comando.Parameters.AddWithValue("@nome", nome);
-                Banco.Comando.Parameters.AddWithValue("@uf", uf);
                 Banco.Comando.Parameters.AddWithValue("@id", id);
 
                 Banco.Comando.ExecuteNonQuery();
@@ -56,7 +53,7 @@ namespace _211086.Model
             try
             {
                 Banco.AbrirConexao();
-                Banco.Comando = new MySqlCommand("delete from Cidades where id = @id", Banco.Conexao);
+                Banco.Comando = new MySqlCommand("delete from Marca where id = @id", Banco.Conexao);
                 Banco.Comando.Parameters.AddWithValue("@id", id);
 
                 Banco.Comando.ExecuteNonQuery();
@@ -73,7 +70,7 @@ namespace _211086.Model
             try
             {
                 Banco.AbrirConexao();
-                Banco.Comando = new MySqlCommand("SELECT * FROM Cidades where nome like @nome" + "order by nome", Banco.Conexao);
+                Banco.Comando = new MySqlCommand("SELECT * FROM Marca where nome like @nome" + "order by nome", Banco.Conexao);
                 Banco.Comando.Parameters.AddWithValue("@nome", nome + "%");
                 Banco.Adaptador = new MySqlDataAdapter(Banco.Comando);
                 Banco.datTabela = new DataTable();
@@ -89,5 +86,4 @@ namespace _211086.Model
             }
         }
     }
-    
 }
