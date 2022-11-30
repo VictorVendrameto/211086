@@ -93,9 +93,11 @@
     <Compile Include="frmMenu.Designer.cs">
       <DependentUpon>frmMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\Categoria.cs" />
     <Compile Include="Model\Cidade.cs" />
     <Compile Include="Model\Clientes.cs" />
     <Compile Include="Model\Marca.cs" />
+    <Compile Include="Model\Produto.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Views\FrmCidade.cs">

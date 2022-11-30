@@ -82,7 +82,13 @@ namespace _211086
                 Comando = new MySqlCommand("CREATE TABLE IF NOT EXISTS Clientes " +
                                             " id INT AUTO_INCREMENT, " +
                                             " nome VARCHAR(120)," +
-                                            "PRIMARY KEY (id));", Conexao);
+                                            " data_nasc DATE," +
+                                            " renda DOUBLE," +
+                                            " cpf CHAR(11)," +
+                                            " foto VARCHAR(150)," +
+                                            " venda BOOLEAN," +
+                                            " PRIMARY KEY (id)," +
+                                            " FOREIGN KEY (id_cidade) REFERENCES Cidades(id));", Conexao);
 
 
                 Comando.ExecuteNonQuery();
@@ -90,6 +96,27 @@ namespace _211086
                 Comando = new MySqlCommand("CREATE TABLE IF NOT EXISTS Marca " +
                                             " id INT AUTO_INCREMENT, " +
                                             " descricao VARCHAR(120)," +
+                                            "PRIMARY KEY (id));", Conexao);
+
+
+                Comando.ExecuteNonQuery();
+
+                Comando = new MySqlCommand("CREATE TABLE IF NOT EXISTS Categoria " +
+                                            " id INT AUTO_INCREMENT, " +
+                                            " descricao VARCHAR(120)," +
+                                            "PRIMARY KEY (id));", Conexao);
+
+
+                Comando.ExecuteNonQuery();
+
+                Comando = new MySqlCommand("CREATE TABLE IF NOT EXISTS Produto " +
+                                            " id INT AUTO_INCREMENT, " +
+                                            " descricao VARCHAR(120)," +
+                                            " id_categoria int," +
+                                            " id_marca int," +
+                                            " estoque int," +
+                                            " foto VARCHAR(120)," +
+                                            "valor decimal(10, 2)," +
                                             "PRIMARY KEY (id));", Conexao);
 
 

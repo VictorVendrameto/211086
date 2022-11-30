@@ -21,5 +21,10 @@ namespace _211086.Views
         {
 
         }
+
+        private void FrmClientes_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
